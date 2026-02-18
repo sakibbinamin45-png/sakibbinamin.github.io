@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guess the Memory Quiz</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f2ff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .quiz-box {
+        background: white;
+        padding: 25px;
+        width: 90%;
+        max-width: 400px;
+        margin: auto;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 10px;
+        background: #d6b4ff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #c89aff;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+</head>
+
+<body>
+<h1>Guess the Memory 🤔</h1>
+
+<div class="quiz-box">
+    <h3>Where did we first hang out?</h3>
+
+    <button onclick="checkAnswer(1)">At school</button>
+    <button onclick="checkAnswer(2)">Café</button>
+    <button onclick="checkAnswer(3)">Park</button>
+    <button onclick="checkAnswer(4)">Library</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function checkAnswer(choice) {
+    let result = document.getElementById("result");
+
+    if (choice === 2) {
+        result.textContent = "Correct! 🎉";
+        result.style.color = "green";
+    } else {
+        result.textContent = "Not quite, try again!";
+        result.style.color = "red";
+    }
+}
+</script>
+</body>
+</html>
